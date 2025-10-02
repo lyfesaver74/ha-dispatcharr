@@ -2,7 +2,7 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
-This is a custom integration for [Home Assistant](https://www.home-assistant.io/) that connects to your [Dispatcharr](https://www.google.com/search?q=https://github.com/amir-rahnama/dispatcharr) instance. It provides real-time monitoring of active streams, creating dynamic sensors for each stream and a summary sensor for the total count.
+This is a custom integration for [Home Assistant](https://www.home-assistant.io/) that connects to your [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr) instance. It provides real-time monitoring of active streams, creating dynamic sensors for each stream and a summary sensor for the total count.
 
 ## Features
 
@@ -116,4 +116,5 @@ Each dynamic stream sensor will have the following attributes:
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 ```
+
 
