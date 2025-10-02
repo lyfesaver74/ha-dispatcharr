@@ -28,6 +28,8 @@ This is a custom integration for [Home Assistant](https://www.home-assistant.io/
 
 ## Prerequisites
 
+* Understand that AI played a really large part in making this. It sucks, I know... but you don't have to use it.
+
 * A running instance of [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr).
 
 * [Home Assistant Community Store (HACS)](https://hacs.xyz/) installed on your Home Assistant instance.
@@ -116,5 +118,6 @@ Each dynamic stream sensor will have the following attributes:
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
 ```
+
 
 
