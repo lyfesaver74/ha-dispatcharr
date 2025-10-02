@@ -1,7 +1,0 @@
-{
-  "name": "Dispatcharr Sessions Sensor",
-  "content_in_root": false,
-  "domains": ["sensor"],
-  "country": "us",
-  "homeassistant": "2022.6.0"
-}
