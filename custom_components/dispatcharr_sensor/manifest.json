@@ -1,7 +1,7 @@
 {
   "domain": "dispatcharr_sensor",
   "name": "Dispatcharr Sessions Sensor",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "documentation": "https://github.com/lyfesaver74/ha-dispatcharr",
   "requirements": [],
   "dependencies": [],
@@ -10,4 +10,5 @@
   "config_flow": true
 
 }
+
 
