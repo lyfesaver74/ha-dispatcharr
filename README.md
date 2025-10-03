@@ -26,7 +26,7 @@ This is a custom integration for Home Assistant that monitors active streams fro
 
 ### Optional Settings
 
-To reduce the load on your Dispatcharr server, especially on systems with limited resources, you can disable the fetching of detailed EPG (program guide) data. When disabled, sensors for active streams will still be created, but program-related attributes (`program_title`, `episode_title`, etc.) will not be populated.
+To reduce the load on your server, especially on systems with limited resources, you can disable the fetching of detailed EPG (program guide) data. When disabled, sensors for active streams will still be created, but program-related attributes (`program_title`, `episode_title`, etc.) will not be populated.
 
 To change this setting:
 1.  Navigate to **Settings** > **Devices & Services**.
