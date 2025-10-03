@@ -73,14 +73,25 @@ You can use a Markdown card in your Home Assistant dashboard to display a clean 
 type: markdown
 title: Active Dispatcharr Streams
 content: |
-  {% for stream in states.sensor | selectattr('attributes.channel_name', 'defined') | selectattr('entity_id', 'search', 'dispatcharr_') %}
-    **{{ stream.attributes.channel_name }} ({{ stream.attributes.channel_number }})**
-    *Now Playing:* {{ stream.attributes.program_title }}
-    {% if stream.attributes.episode_title %}
-      *Episode:* {{ stream.attributes.episode_title }} ({{ stream.attributes.episode_number }})
-    {% endif %}
-    *Clients:* {{ stream.attributes.clients }} | *Resolution:* {{ stream.attributes.resolution }}
-    ***
+  {% set streams = states.sensor 
+     | selectattr('attributes.channel_name', 'defined') 
+     | selectattr('entity_id', 'search', 'dispatcharr_') 
+     | list %}
+  {% if streams %}
+    {% for stream in streams %}
+      **{{ stream.attributes.channel_name }} ({{- stream.attributes.channel_number -}})**
+      
+      *Now Playing:* {{ stream.attributes.program_title }}
+      
+      {% if stream.attributes.episode_title %}
+        *Episode:* {{ stream.attributes.episode_title }} ({{- stream.attributes.episode_number -}})
+      {% endif %}
+
+      *Clients:* {{ stream.attributes.clients }} | *Resolution:* {{ stream.attributes.resolution }}
+      {% if not loop.last %}
+        ***
+      {% endif %}
+    {% endfor %}
   {% else %}
     No active streams.
   {% endif %}
