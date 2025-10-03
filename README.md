@@ -6,33 +6,33 @@ This is a custom integration for Home Assistant that monitors active streams fro
 
 -   Provides a sensor showing the total number of active streams (`sensor.total_active_streams`).
 -   Dynamically creates a unique sensor for each active stream, which is automatically removed when the stream stops.
--   Pulls detailed Electronic Program Guide (EPG) information for each active stream, including:
-    -   Program Title
-    -   Episode Title (Subtitle)
-    -   Episode Number
-    -   Description
-    -   Start and End times
--   Displays stream-specific details like client count, resolution, codecs, and bitrate as sensor attributes.
+-   Pulls detailed program guide (EPG) information for each active stream, including program/episode titles and numbers.
+-   Displays stream-specific details like resolution, codecs, and client count.
+-   Includes an option to disable EPG fetching to reduce server load.
 
 ## Installation and Configuration
 
-### Installation
+### Initial Setup
 
 1.  Copy the `dispatcharr_sensor` directory into your Home Assistant `<config>/custom_components/` directory.
 2.  Restart Home Assistant.
-
-### Configuration
-
-Configuration is done via the UI.
-
-1.  Go to **Settings** > **Devices & Services**.
-2.  Click the **Add Integration** button in the bottom right.
-3.  Search for "Dispatcharr" and select it.
-4.  In the configuration dialog, enter the required information:
+3.  Go to **Settings** > **Devices & Services** > **Add Integration**.
+4.  Search for "Dispatcharr" and select it.
+5.  In the configuration dialog, enter the following information:
     -   **Host:** The IP address of your Dispatcharr server (e.g., `192.168.0.121`).
     -   **Port:** The port your Dispatcharr server is running on (e.g., `9191`).
     -   **Username:** Your Dispatcharr username.
     -   **Password:** Your Dispatcharr password.
+
+### Optional Settings
+
+To reduce the load on your Dispatcharr server, especially on systems with limited resources, you can disable the fetching of detailed EPG (program guide) data. When disabled, sensors for active streams will still be created, but program-related attributes (`program_title`, `episode_title`, etc.) will not be populated.
+
+To change this setting:
+1.  Navigate to **Settings** > **Devices & Services**.
+2.  Find your Dispatcharr integration and click **Configure**.
+3.  A dialog box will appear. Uncheck the box labeled **"Enable EPG Program Data"** to disable it.
+4.  Click **Submit**.
 
 ## Sensors Provided
 
@@ -83,4 +83,4 @@ content: |
     ***
   {% else %}
     No active streams.
-  {% endfor %}
+  {% endif %}
