@@ -1,6 +1,7 @@
 # Dispatcharr Integration for Home Assistant
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 
-This is a custom integration for Home Assistant that monitors active streams from a Dispatcharr server. It provides sensors to track the total number of streams and detailed information for each individual stream.
+This is a custom integration for [Home Assistant](https://www.home-assistant.io/) that connects to your [Dispatcharr](https://github.com/Dispatcharr/Dispatcharr) instance. It provides real-time monitoring of active streams, creating dynamic media players for each stream and a summary sensor for the total count.
 
 ## Features
 
